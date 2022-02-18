@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #second-title {
+            background-color: rgb(190, 253, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>welcome to my blog website</h1>
+
+    </header>
+
+    <main>
+        <section id="blogss">
+            <header>
+                <h1>Blog List</h1>
+                <ul id="blog-list">
+                    <li>Blog-1</li>
+                    <li>Blog-2</li>
+                    <li>Blog-3</li>
+                </ul>
+            </header>
+            <article class="blog">
+                <h3>my awesome blog -1</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus in sapiente quae hic mollitia
+                    dolores?</p>
+            </article>
+            <article class="blog">
+                <h3 id="second-title">my awesome blog -2</h3>
+                <p>Suscipit quibusdam pariatur repudiandae eaque, dolorum explicabo sed cumque blanditiis, soluta
+                    placeat rerum quia minima?</p>
+            </article>
+            <article class="blog">
+                <h3 id="third-title">my awesome blog -3</h3>
+                <p>Dolorem beatae nihil ratione officiis earum, voluptates ullam quidem, tempore error nesciunt, impedit
+                    illo dignissimos.</p>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        // desplaying object property in website console through internal js in html file.
+
+        // console.log(document.body)
+        // const student = { name: 'abdurrahaman', age: 16, height: 60 }
+        // console.log(student)
+
+        // displaying specific tag in website console through js in internal html file.
+
+        const blogTittle = document.getElementsByTagName('h3');
+        // console.log(blogTittle);
+        for (const title of blogTittle) {
+            // console.log(title)
+        }
+
+        const blog = document.getElementsByTagName('p');
+        // console.log(blog);
+        for (const p of blog) {
+            // console.log(p)
+
+
+        }
+        // applying css through javascript by selecting id
+        const secondTitle = document.getElementById('second-title');
+        secondTitle.style.textAlign = 'center';
+        secondTitle.style.color = 'red'
+
+        const third = document.getElementById('third-title');
+        third.innerText = 'third title updated'
+        third.style.backgroundColor = 'salmon'
+        third.style.color = 'white'
+
+        /* // applying css through javascript by selecting class
+
+        const blogs = document.getElementsByClassName('blog');
+
+        for (const blog of blogs) {
+            console.log(blog)
+
+            blog.style.border = '2px solid orange';
+            blog.style.margin = '5px';
+            blog.style.padding = '5px';
+            blog.style.borderRadius = '10px';
+        } */
+        // to select only one p with css querySelector
+        // document.querySelector('p')
+
+        // to select all css by id and class, put the css id symbol # and class symbol . with css querySelectorAll
+
+        // document.querySelectorAll('#second-title')
+
+
+        // create and add element by using js
+
+        // create the element
+
+        const li = document.createElement('li');
+        li.innerText = 'Blog-List-4';
+
+        // where to add
+
+        const ul = document.getElementById('blog-list')
+
+        // append new element
+
+        ul.appendChild(li);
+
+        // add article
+
+        const article = document.createElement('article');
+        article.classList.add('blog')
+        /* const h3 = document.createElement('h3');
+        h3.innerText = 'my awesome blog - 5';
+
+        const p = document.createElement('p');
+        p.innerText = 'Suscipit quibusdam pariatur repudiandae eaque, dolorum explicabo sed cumque blanditiis, solu';
+        article.appendChild(h3);
+        article.appendChild(p); */
+
+        article.innerHTML = `
+        <h3>my awesome blog - 5</h3>
+        <p>Dolorem beatae nihil ratione officiis earum, voluptates ullam quidem, tempore error nesciunt, impedit
+                    illo dignissimos.</p>
+        `
+
+        // parents of article
+
+        const theBlogs = document.getElementById('blogss');
+
+        theBlogs.appendChild(article);
+
+
+        // applying css through javascript by selecting class
+
+        const blogs = document.getElementsByClassName('blog');
+
+        for (const blog of blogs) {
+            console.log(blog)
+
+            blog.style.border = '2px solid orange';
+            blog.style.margin = '5px';
+            blog.style.padding = '5px';
+            blog.style.borderRadius = '10px';
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>
